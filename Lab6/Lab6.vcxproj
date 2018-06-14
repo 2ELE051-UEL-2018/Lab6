@@ -33,19 +33,49 @@
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros" />
   <ItemGroup>
-    <ClInclude Include="pch.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="test.cpp" />
-    <ClCompile Include="pch.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
-    </ClCompile>
+    <ClCompile Include="aux_test_functions.cpp" />
+    <ClCompile Include="cplxc.c" />
+    <ClCompile Include="cplxp.c" />
+    <ClCompile Include="gmtime_s2.c" />
+    <ClCompile Include="paralelo_impedancias_cart.c" />
+    <ClCompile Include="paralelo_impedancias_polar.c" />
+    <ClCompile Include="testes_cplxc_conj.cpp" />
+    <ClCompile Include="testes_cplxc_divisao.cpp" />
+    <ClCompile Include="testes_cplxc_exp.cpp" />
+    <ClCompile Include="testes_cplxc_fase.cpp" />
+    <ClCompile Include="testes_cplxc_imag.cpp" />
+    <ClCompile Include="testes_cplxc_init_cartesiano.cpp" />
+    <ClCompile Include="testes_cplxc_init_polar.cpp" />
+    <ClCompile Include="testes_cplxc_modulo.cpp" />
+    <ClCompile Include="testes_cplxc_produto.cpp" />
+    <ClCompile Include="testes_cplxc_real.cpp" />
+    <ClCompile Include="testes_cplxc_soma.cpp" />
+    <ClCompile Include="testes_cplxc_subtracao.cpp" />
+    <ClCompile Include="testes_cplxp_conj.cpp" />
+    <ClCompile Include="testes_cplxp_divisao.cpp" />
+    <ClCompile Include="testes_cplxp_exp.cpp" />
+    <ClCompile Include="testes_cplxp_fase.cpp" />
+    <ClCompile Include="testes_cplxp_imag.cpp" />
+    <ClCompile Include="testes_cplxp_init_cartesiano.cpp" />
+    <ClCompile Include="testes_cplxp_init_polar.cpp" />
+    <ClCompile Include="testes_cplxp_modulo.cpp" />
+    <ClCompile Include="testes_cplxp_produto.cpp" />
+    <ClCompile Include="testes_cplxp_real.cpp" />
+    <ClCompile Include="testes_cplxp_soma.cpp" />
+    <ClCompile Include="testes_cplxp_subtracao.cpp" />
+    <ClCompile Include="testes_gmtime_s2.cpp" />
+    <ClCompile Include="testes_mkgmtime2.cpp" />
+    <ClCompile Include="mkgmtime2.c" />
+    <ClCompile Include="testes_paralelo_impedancias_cart.cpp" />
+    <ClCompile Include="testes_paralelo_impedancias_polar.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="aux_test_functions.h" />
+    <ClInclude Include="cplxc.h" />
+    <ClInclude Include="cplxp.h" />
   </ItemGroup>
   <ItemDefinitionGroup />
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
@@ -54,14 +84,15 @@
   </ImportGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <MinimalRebuild>true</MinimalRebuild>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_SILENCE_TR1_NAMESPACE_DEPRECATION_WARNING;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -70,14 +101,15 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>X64;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <MinimalRebuild>true</MinimalRebuild>
+      <PreprocessorDefinitions>X64;_DEBUG;_CONSOLE;_SILENCE_TR1_NAMESPACE_DEPRECATION_WARNING;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
